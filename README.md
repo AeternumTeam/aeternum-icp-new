@@ -16,7 +16,7 @@ Sebelum memulai, pastikan Anda memiliki perangkat lunak berikut diinstal di sist
 1. **Jalankan WSL pada windows**
 2. **Clone repositori**
    ```bash
-   git clone https://github.com/AeternumTeam/aeternum-icp.git aeternum-icp
+   git clone https://github.com/AeternumTeam/aeternum-icp-new.git aeternum-icp
    ```
 3. **Install depecencies**
    ```bash
