@@ -1,0 +1,43 @@
+//
+//service.scss
+//
+
+.service-box {
+  padding: 40px 30px;
+  border-radius: 0.25rem;
+  i {
+    font-size: 40px;
+  }
+  .lighlight-border {
+    width: 60px;
+    height: 1px;
+    background: $primary;
+    background: linear-gradient(to right, transparent, $primary, transparent);
+    margin: 0 auto;
+  }
+}
+
+//Home2-feature
+
+.bg-feature {
+  z-index: 1;
+  position: relative;
+  margin-top: -112px;
+}
+
+.feature-box {
+  background-color: $white;
+  box-shadow: $box-shadow;
+  border-radius: 4px;
+  padding: 20px;
+  .feature-icon {
+    background-color: rgba($primary, 0.15);
+    color: $primary;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 4px;
+  }
+}

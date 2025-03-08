@@ -1,0 +1,70 @@
+//
+// variables.scss
+//
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
+
+
+$primary:   #05bd93;
+$success:   #00B295;
+$info:      #57B8FF;
+$warning:   #FBB13C;
+$danger:    #FE6847;
+$purple:    #9261c6;
+$pink:      #ff7aa3;
+$white:     #ffffff;
+$dark:      #161c2d;
+$light:     #f9f9f9;
+$muted:     #8492a6;
+$dark-green: #183339;
+
+// stylelint-disable
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #efefef;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black:    #000000;
+$white:    #ffffff;
+
+$colors: (
+    "primary":   $primary,
+    "success":   $success,
+    "info":      $info,
+    "warning":   $warning,
+    "danger":    $danger,
+    "dark":      $dark,
+    "muted":     $muted,
+    "purple":    $purple,
+    "pink":      $pink,
+    "white":     $white,
+    "light":     $light,
+    "dark-green": $dark-green
+);
+
+$theme-colors: (
+  "primary":      $primary,
+  "success":      $success,
+  "info":         $info,
+  "warning":      $warning,
+  "danger":       $danger,
+  "light":        $light,
+  "dark":         $dark,
+  "muted":        $muted,
+  "white":        $white,
+  "dark-green":   $dark-green
+);
+
+// Body Background
+$body-bg:                   #f5f5f5;
+$box-shadow:               0px 10px 22px rgba($black, 0.05);
+  
+// font weight
+$font-weight-medium:    500;
+$font-weight-semibold:  600;
+
+$font-family-base:            'Nunito', sans-serif;

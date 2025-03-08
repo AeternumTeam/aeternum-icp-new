@@ -1,0 +1,67 @@
+//
+// about.scss
+//
+
+.skill-box {
+  z-index: 3;
+  position: relative;
+  .progress {
+    height: 8px;
+    background: $gray-200;
+    overflow: visible;
+  }
+  .progress-bar {
+    position: relative;
+    background-color: $primary;
+    animation: animate-positive 2s;
+    overflow: visible;
+  }
+  .progress-value {
+    display: block;
+    color: $dark;
+    position: absolute;
+    top: -31px;
+    right: -25px;
+  }
+}
+
+.about-img {
+  position: relative;
+  margin-left: -50px;
+  margin-top: 0px;
+  min-width: calc(50% + 50px);
+  flex: none;
+  @media (max-width: 991.98px) {
+    margin-left: 0px;
+    margin-top: 28px;
+  }
+}
+
+@keyframes animate-positive {
+  0% {
+    width: 0;
+  }
+}
+
+.title-about {
+  max-width: 750px;
+  margin: 0 auto;
+  text-align: start;
+  font-size: 17px;
+}
+
+.title{
+  text-align: start;
+}
+
+.link{
+  color: $primary;
+  text-decoration: underline;
+}
+
+.about{
+  min-height: 100vh;
+  @media (max-width: 991.98px) {
+    min-height: 60vh;
+  }
+}

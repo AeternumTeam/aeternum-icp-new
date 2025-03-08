@@ -1,0 +1,35 @@
+//
+// Blog.scss
+//
+
+.blog-box {
+  transition: all 0.5s ease;
+  .blog-img {
+    position: relative;
+    .read-more{
+      position: absolute;
+      bottom: -18px;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: all 0.5s ease;
+      a{
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+        border-radius: 50%;
+        font-size: 18px;
+        background-color: $primary;
+        color: $white;
+      }
+  }
+  }
+  &:hover {
+    transform: translateY(-8px);
+    .read-more {
+      opacity: 1;
+    }
+  }
+}

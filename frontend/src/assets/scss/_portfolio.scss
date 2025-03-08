@@ -1,0 +1,79 @@
+//
+// porthfolio.scss
+//
+.portfolio-title {
+    font-size: 21px;
+    word-spacing: 2px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.port-folio-sub-title {
+    color: $muted;
+    font-size: 17px;
+    word-spacing: 1px;
+    padding-top: 10px;
+}
+
+
+.portfolio-box {
+    position: relative;
+    overflow: hidden;
+    .portfolio-content {
+       padding: 20px;
+        transition: all 0.5s ease;
+        position: absolute;
+        width: 100%;
+        height: 80px;
+        background-color: rgba($light, 0.85);
+        bottom: -100px;
+        left: 0;
+        opacity: 0;
+    }
+    &:hover {
+        .portfolio-content {
+            bottom: 0;
+            opacity: 1;
+        }
+    }
+}
+
+.filter-options {
+    .nav-link {
+        color: $dark;
+        background-color: $white;
+        border-radius: 3px;
+        cursor: pointer;
+        border: 1px solid rgba($dark, 0.1);
+        transition: all 0.5s ease;
+        &:hover, &.active {
+            color: $white;
+            background-color: $primary;
+            border-color: $primary;
+        }
+    }
+}
+
+.img-view{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 10px;
+    align-items: center;
+    display: flex;
+    a {
+        display: inline-block;
+        height: 30px;
+        line-height: 30px;
+        width: 30px;
+        border-radius: 4px;
+        font-size: 22px;
+        text-align: center;
+        background: rgba($muted, 0.08);
+
+    }
+}
+
+.goverlay{
+    background-color: rgba(0, 0, 0, 0.85);
+}
