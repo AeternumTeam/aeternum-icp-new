@@ -17,6 +17,8 @@ Sebelum memulai, pastikan Anda memiliki perangkat lunak berikut diinstal di sist
 2. **Clone repositori**
    ```bash
    git clone https://github.com/AeternumTeam/aeternum-icp-new.git aeternum-icp
+   cd aeternum-icp
+   cd frontend
    ```
 3. **Install depecencies**
    ```bash
