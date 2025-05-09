@@ -44,25 +44,42 @@ const BadgeWalletCard = (args) => {
 
   const handleFileChange = async (event) => {
     const file = event.target.files[0];
-    if (file) {
-      try {
-        const {labels, values} = await analyzerFile(file);
-
-        setSelectedFile(file);
-        setFileData({labels, values});
-
-      if (labels && values) {
-        const inputs = Object.keys(labels).map((key) => ({
+    if (!file) return;
+    
+    setIsLoading(true);
+    setError(null);
+    
+    try {
+      const { result, filename, message, path } = await analyzerFile(file);
+      
+      setSelectedFile(file);
+      setFileData({
+        labels: result.labels || {},
+        values: result.values || {},
+        filename,
+        message,
+        path
+      });
+      
+      // Process dynamic inputs only if we have valid data
+      if (result.labels && result.values) {
+        const inputs = Object.keys(result.labels).map((key) => ({
           id: key,
-          label: labels[key],
-          value: values[key] || '',
+          label: result.labels[key] || '',
+          value: result.values[key] || '',
         }));
         setDynamicInputs(inputs);
+      } else {
+        setDynamicInputs([]);
       }
-
-      } catch (error) {
-        console.error('Error analyzing file:', error);
-      }
+    } catch (error) {
+      console.error('Error analyzing file:', error);
+      setError('Failed to analyze file. Please try again.');
+      setSelectedFile(null);
+      setFileData(null);
+      setDynamicInputs([]);
+    } finally {
+      setIsLoading(false);
     }
   };
 
