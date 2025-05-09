@@ -45,13 +45,20 @@ const BadgeWalletCard = (args) => {
   const handleFileChange = async (event) => {
     const file = event.target.files[0];
     if (!file) return;
-    
+
     setIsLoading(true);
     setError(null);
-    
+
     try {
-      const { result, filename, message, path } = await analyzerFile(file);
-      
+      const response = await analyzerFile(file);
+
+      // Ensure response and response.result exist
+      if (!response || !response.result) {
+        throw new Error('Invalid response format from analyzerFile');
+      }
+
+      const { result, filename, message, path } = response;
+
       setSelectedFile(file);
       setFileData({
         labels: result.labels || {},
@@ -60,12 +67,12 @@ const BadgeWalletCard = (args) => {
         message,
         path
       });
-      
+
       // Process dynamic inputs only if we have valid data
       if (result.labels && result.values) {
-        const inputs = Object.keys(result.labels).map((key) => ({
+        const inputs = Object.entries(result.labels).map(([key, label]) => ({
           id: key,
-          label: result.labels[key] || '',
+          label: label || '',
           value: result.values[key] || '',
         }));
         setDynamicInputs(inputs);
