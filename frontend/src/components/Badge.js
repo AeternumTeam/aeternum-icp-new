@@ -205,7 +205,6 @@ const BadgeWalletCard = (args) => {
                   id={input.id}
                   name={input.id}
                   value={input.value}
-                  readOnly
                 />
               </FormGroup>
             ))}
