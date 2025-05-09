@@ -8,7 +8,7 @@ const port = 5000;
 
 app.use(cors());
 
-app.post('/upload-single', upload.single('file'), async (req, res) => {
+app.post('/ai/upload', upload.single('file'), async (req, res) => {
   if (!req.file) {
     return res.status(400).send('No file uploaded.');
   }
@@ -24,7 +24,7 @@ app.post('/upload-single', upload.single('file'), async (req, res) => {
   });
 });
 
-app.post('/upload-multiple', upload.array('files', 5), (req, res) => {
+app.post('/ai/upload-multiple', upload.array('files', 5), (req, res) => {
   if (!req.files || req.files.length === 0) {
     return res.status(400).send('No files uploaded.');
   }
