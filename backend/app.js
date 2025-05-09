@@ -28,7 +28,7 @@ app.use('/api/v1/user', userRoute);
 app.use('/api/v1/auth', authRoute);
 app.use('/api/v1/issuer', issuerRoute);
 app.use('/api/v1/verifier', verifierRoute);
-app.use('/img', imgRoute);
+app.use('/api/img', imgRoute);
 
 // Start the server
 app.listen(configs.port, '0.0.0.0', () => {
