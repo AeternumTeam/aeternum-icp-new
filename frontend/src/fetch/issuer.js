@@ -30,13 +30,10 @@ export const analyzerFile = async (file) => {
         const response = await axios.post(`${process.env.REACT_APP_AI_SERVER_URL}/ai/upload`, data, {
             headers : {
                 "Content-Type" : 'multipart/form-data',
-                'Authorization': 'Bearer ' + authorization
+                'Authorization': 'Bearer'+ authorization
             },
         });
-
-        if(response.status === 200) {
-           return response.data.data
-        }
+        return response.data
     } catch (error) {
         console.log(error.response.data)
     }
