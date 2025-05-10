@@ -15,10 +15,6 @@ const Dashboard = () => {
   const data = isAuthenticated ? JSON.parse(localStorage.getItem('user')) : null;
   const baseUrl = window.location.origin;
 
-  if(username !== data.user.username){
-    window.location.href = `${baseUrl}/`;
-  }
-
   if (error) {
       console.error(error)
   }
