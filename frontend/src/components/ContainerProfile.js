@@ -37,7 +37,7 @@ const ContainerProfile = () => {
       toast.success('URL updated successfully');
       toggleEditUrlModal();
       
-      navigate(`/${data.user.username}`);
+      navigate(`/${updatedUser.user.username}`);
     } catch (error) {
       console.error('Error updating URL:', error);
       toast.error('Failed to update URL');
