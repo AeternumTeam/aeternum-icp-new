@@ -15,9 +15,9 @@ const Dashboard = () => {
   const data = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null;
   const baseUrl = window.location.origin;
 
-  if(`${baseUrl}/${username}` !== `${baseUrl}/${data.url}`){
-    window.location.href = `${baseUrl}/`;
-  }
+  // if(`${baseUrl}/${username}` !== `${baseUrl}/${data.url}`){
+  //   window.location.href = `${baseUrl}/`;
+  // }
 
   if (error) {
       console.error(error)
