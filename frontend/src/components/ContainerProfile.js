@@ -34,10 +34,14 @@ const ContainerProfile = () => {
       const updatedUser = { ...data, url: newUrl };
       localStorage.setItem('user', JSON.stringify(updatedUser));
       
+      // Close the modal and show success message
       toast.success('URL updated successfully');
-      toggleEditUrlModal();
-      
+
+      //refresh page
       navigate(0);
+      
+      // Close the modal
+      toggleEditUrlModal();      
     } catch (error) {
       console.error('Error updating URL:', error);
       toast.error('Failed to update URL');
