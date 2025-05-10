@@ -26,12 +26,7 @@ const ContainerProfile = () => {
   // Handle URL update
   const handleUpdateUrl = async () => {
     try {
-      // Validate URL format (only allow alphanumeric, hyphens, and underscores)
-      if (!/^[a-zA-Z0-9-_]+$/.test(newUrl)) {
-        toast.error('URL can only contain letters, numbers, hyphens, and underscores');
-        return;
-      }
-
+      
       // Here you would make an API call to update the URL
       // For now, we'll just update it in localStorage for demonstration
       const updatedUser = { ...data, url: newUrl };
