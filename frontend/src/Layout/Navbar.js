@@ -120,7 +120,7 @@ const NavBar = ({isDark}, args) => {
                 </li>
                 <div className="ms-2">
                   {userData ? (
-                    <Link to={`/${user.username}`} className="btn btn-primary">
+                    <Link to={`${data.url}`} className="btn btn-primary">
                       Dashboard
                     </Link>
                   ) : (
