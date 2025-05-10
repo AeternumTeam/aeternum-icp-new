@@ -12,14 +12,14 @@ const ContainerProfile = () => {
 
   const data = isAuthenticated ? JSON.parse(localStorage.getItem('user')) : null;
   const baseUrl = window.location.origin;
-  const profileUrl = data ? `${baseUrl}/${data.url || data.user.name.toLowerCase().replace(/\s+/g, '-')}` : `${baseUrl}/your-name`;
+  const profileUrl = data ? `${data.url}` : `${baseUrl}/your-name`;
 
   // Toggle edit URL modal
   const toggleEditUrlModal = () => {
     setEditUrlModal(!editUrlModal);
     if (!editUrlModal) {
       // Initialize with current URL when opening modal
-      setNewUrl(data?.url || data?.user.name.toLowerCase().replace(/\s+/g, '-') || 'your-name');
+      setNewUrl(data?.url || `${baseUrl}/your-name`);
     }
   };
 
@@ -133,7 +133,6 @@ const ContainerProfile = () => {
           <div className="mb-3">
             <label htmlFor="profileUrl" className="form-label">Your profile URL</label>
             <div className="input-group">
-              <span className="input-group-text">{baseUrl}/</span>
               <Input
                 type="text"
                 id="profileUrl"
