@@ -117,9 +117,6 @@ const NavBarDashboard = ({isDark, direction, ...args}) => {
                             <DropdownItem>
                             <i className="fa fa-user"></i> Profile
                             </DropdownItem>
-                            <DropdownItem>
-                            <i className="fa fa-envelope"></i> Send Transcript
-                            </DropdownItem>
                             <DropdownItem onClick={logout}>
                             <i className="fa fa-sign-out"></i> Log Out
                             </DropdownItem>

@@ -12,6 +12,10 @@ import GoogleButton from "../components/GoogleButton";
 import { login } from "../fetch/auth.js";
 
 const NavBar = ({isDark}, args) => {
+  const userData = localStorage.getItem("user");
+  const data = userData ? JSON.parse(userData) : null;
+  const user = data ? data.user : null;
+
   const [isOpenMenu, setisOpenMenu] = useState(false);
   const [navClass, setnavClass] = useState("");
 
@@ -115,9 +119,15 @@ const NavBar = ({isDark}, args) => {
                   <NavLink href="/checkcertificate">Cek Sertifikat</NavLink>
                 </li>
                 <div className="ms-2">
-                  <Link to="#" className="btn btn-primary" onClick={toggleLogin}>
-                    Masuk
-                  </Link>
+                  {userData ? (
+                    <Link to={`/${user.username}`} className="btn btn-primary">
+                      Dashboard
+                    </Link>
+                  ) : (
+                    <Link to='#' className="btn btn-primary" onClick={toggleLogin}>
+                      Masuk
+                    </Link>
+                  )}
                 </div>
               </Scrollspy>
             </Collapse>
