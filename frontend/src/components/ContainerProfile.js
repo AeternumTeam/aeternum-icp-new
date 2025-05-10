@@ -38,8 +38,8 @@ const ContainerProfile = () => {
       toast.success('URL updated successfully');
 
       //refresh page
-      navigate(0);
-      
+      window.location.href = `${newUrl}`;
+
       // Close the modal
       toggleEditUrlModal();      
     } catch (error) {
