@@ -12,6 +12,12 @@ import { useParams } from "react-router-dom";
 const Dashboard = () => {
   const { username } = useParams();
   const { error, isAuthenticated } = useAuth();
+  const data = isAuthenticated ? JSON.parse(localStorage.getItem('user')) : null;
+  const baseUrl = window.location.origin;
+
+  if(username !== data.user.username){
+    window.location.href = `${baseUrl}/`;
+  }
 
   if (error) {
       console.error(error)

@@ -3,12 +3,14 @@ import { FaEdit, FaLink, FaExternalLinkAlt, FaCheck } from 'react-icons/fa';
 import useAuth from "../hooks/auth-check";
 import { toast } from 'react-toastify';
 import { Modal, ModalHeader, ModalBody, ModalFooter, Button, Input } from 'reactstrap';
+import { useNavigate } from "react-router-dom";
 
 const ContainerProfile = () => {
   const { isAuthenticated } = useAuth();
   const [editUrlModal, setEditUrlModal] = useState(false);
   const [newUrl, setNewUrl] = useState('');
   const [isCopied, setIsCopied] = useState(false);
+  const navigate = useNavigate();
 
   const data = isAuthenticated ? JSON.parse(localStorage.getItem('user')) : null;
   const baseUrl = window.location.origin;
@@ -26,7 +28,7 @@ const ContainerProfile = () => {
   // Handle URL update
   const handleUpdateUrl = async () => {
     try {
-      
+
       // Here you would make an API call to update the URL
       // For now, we'll just update it in localStorage for demonstration
       const updatedUser = { ...data, url: newUrl };
@@ -35,7 +37,7 @@ const ContainerProfile = () => {
       toast.success('URL updated successfully');
       toggleEditUrlModal();
       
-      // In a real app, you would refresh the user data or update state
+      navigate(`/${data.user.username}`);
     } catch (error) {
       console.error('Error updating URL:', error);
       toast.error('Failed to update URL');
